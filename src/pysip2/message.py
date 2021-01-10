@@ -27,7 +27,7 @@ class Field(object):
         self.value = value
     
     def __str__(self):
-        return self.spec.code + (self.value or '') + '|'
+        return self.spec.code + (self.value or '')
 
     def __repr__(self):
         spaces = STRING_COLUMN_PAD - len(self.spec.label) - 5
@@ -64,15 +64,11 @@ class Message(object):
         if self.msg_txt != '':
             return self.msg_txt
 
-        new_txt = self.spec.code
-
-        for ff in self.fixed_fields:
-            new_txt = new_txt + str(ff)
-
-        for field in self.fields:
-            new_txt = new_txt + str(field)
-
-        self.msg_txt = new_txt
+        self.msg_txt = (
+            self.spec.code
+            + ''.join([str(f) for f in self.fixed_fields])
+            + '|'.join([str(f) for f in self.fields])
+        )
 
         return self.msg_txt
 
