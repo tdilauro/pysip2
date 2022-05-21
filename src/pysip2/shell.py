@@ -316,7 +316,7 @@ class CommandRunner(object):
             print(_('Command not found: {0}').format(command), file=sys.stderr)
             return
 
-        if command in ['start', 'connect'] and (
+        if command in ['start'] and (
             not self.config.port 
             or not self.config.server
             or not self.config.username

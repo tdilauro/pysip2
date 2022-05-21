@@ -233,6 +233,11 @@ MessageSpec.asc_status = MessageSpec(
 )
 
 MessageSpec.login = MessageSpec(
+    '96', _('Resend Request'),
+    fixed_fields = []
+)
+
+MessageSpec.login = MessageSpec(
     '93', _('Login Request'), 
     fixed_fields = [
         FixedFieldSpec.uid_algo,

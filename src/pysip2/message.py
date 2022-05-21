@@ -46,7 +46,6 @@ class FixedField(Field):
 class Message(object):
     '''Models a complete SIP2 message.'''
 
-
     def __init__(self, **kwargs):
         self.fields = []
         self.fixed_fields = []

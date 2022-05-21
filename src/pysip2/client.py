@@ -116,7 +116,7 @@ class Client(object):
 
             msg_txt = msg_txt + buf.decode(TEXT_ENCODING)
 
-            if msg_txt[-Client.LINE_TERMINATOR_LEN:] == LINE_TERMINATOR:
+            if msg_txt.endswith(LINE_TERMINATOR):
                 break
 
         self.client_log.finish_msg()
