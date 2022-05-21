@@ -19,9 +19,9 @@ from gettext import gettext as _
 # Constants
 # -----------------------------------------------------------------
 
-TEXT_ENCODING       = 'UTF-8'
+TEXT_ENCODING       = 'CP850'  # 'UTF-8'
 SIP_DATETIME        = "%Y%m%d    %H%M%S"
-LINE_TERMINATOR     = '\r'
+LINE_TERMINATOR     = '\r\n'
 SOCKET_BUFSIZE      = 4096
 STRING_COLUMN_PAD   = 32 # for printing messages in columnar displays
 

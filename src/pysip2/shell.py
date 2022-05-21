@@ -364,7 +364,7 @@ class ConfigHandler(object):
         logging.config.fileConfig(self.configfile)
         # prevent stdout debug logs from cluttering the shell.
         # TODO: make it possible to change this from within the shell.
-        logging.getLogger().setLevel('WARNING')
+        logging.getLogger().setLevel('DEBUG')
 
         config = configparser.ConfigParser()
         config.read(self.configfile)
