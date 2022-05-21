@@ -145,7 +145,7 @@ class CommandRunner(object):
             [{'required' : False, 'label' : _('password')}]
         )
 
-        self.add_command('institution', self.set_sip_attr,
+        self.add_command('institution', self.set_institution,
             _('View or set the current SIP institution.'),
             [{'required' : False, 'label' : _('institution')}]
         )
@@ -287,6 +287,11 @@ class CommandRunner(object):
         print(_('Set SIP attribute "{0}" to "{1}"').format(attr, args[0]))
 
         return True
+
+    def set_institution(self, cmd, new_value):
+        self.set_conf_attr(cmd, new_value)
+        self.client.default_institution = new_value
+
 
     def set_conf_attr(self, attr, *args):
         ''' Just like set_sip_attr minus the disconnect '''
