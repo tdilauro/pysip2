@@ -290,7 +290,8 @@ class CommandRunner(object):
 
     def set_institution(self, cmd, new_value):
         self.set_conf_attr(cmd, new_value)
-        self.client.default_institution = new_value
+        if self.client:
+            self.client.default_institution = new_value
 
 
     def set_conf_attr(self, attr, *args):
